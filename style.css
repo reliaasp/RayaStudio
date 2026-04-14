@@ -393,7 +393,7 @@ h1 {
     color: white;
 }
 /* --- CSS UNTUK TAMPILAN BARU (FIGMA THEME) --- */
-/* ini punya andre */
+/* ini buatan andre */
 /* Reset Dasar biar rapi */
 * {
     margin: 0;
@@ -417,11 +417,20 @@ body {
     background-color: #521475; /* Ungu gelap Figma */
     color: white;
     padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .logo img {
-    width: 140px;
+    width: 210px;
     margin-bottom: 50px;
+}
+.menu-bottom {
+    margin-top: auto; /* Memaksa menu ini nempel ke dasar sidebar */
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Opsional: kasih garis tipis biar cakep */
+    padding-top: 20px;
 }
 
 .menu-label {
