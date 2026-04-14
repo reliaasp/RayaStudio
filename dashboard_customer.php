@@ -48,19 +48,34 @@ session_start();
     <h2>Our Product</h2>
 
     <div class="product-list">
-        <?php
+<?php
 include "database.php";
 
-$data = mysqli_query($conn, "SELECT * FROM products");
+$category = $_GET['category'] ?? '';
 
-while ($row = mysqli_fetch_assoc($data)) {
+if ($category) {
+    $data = mysqli_query($conn, "SELECT * FROM products WHERE category='$category'");
+} else {
+    $data = mysqli_query($conn, "SELECT * FROM products");
+}
 ?>
+
+<!-- FILTER (PINDAH KE SINI) -->
+<div class="filter">
+    <a href="dashboard_customer.php" class="<?= !$category ? 'active' : '' ?>">All</a>
+    <a href="dashboard_customer.php?category=course" class="<?= $category=='course' ? 'active' : '' ?>">Course</a>
+    <a href="dashboard_customer.php?category=digital" class="<?= $category=='digital' ? 'active' : '' ?>">Digital</a>
+    <a href="dashboard_customer.php?category=setup" class="<?= $category=='setup' ? 'active' : '' ?>">Setup</a>
+</div>
+
+<?php while ($row = mysqli_fetch_assoc($data)) { ?>
     <div class="card">
         <div class="card-icon"><?= $row['icon']; ?></div>
         <h3><?= $row['name']; ?></h3>
+        <p>Kategori: <?= $row['category']; ?></p>
         <p>Rp <?= $row['price']; ?></p>
-    <button>Beli</button>
-</div>
+        <button>Beli</button>
+    </div>
 <?php } ?>
     </div>
 </div>
