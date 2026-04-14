@@ -45,8 +45,8 @@
                 <div class="action-buttons">
                     <button>Add Link</button>
                     <button>Digital Product</button>
-                    <button>Blog Content</button>
-                    <button>Course Video</button>
+                    <button>Course</button>
+                    <button>Set Up</button>
                     <button>Media</button>
                 </div>
             </section>
