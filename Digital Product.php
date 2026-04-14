@@ -44,7 +44,7 @@
     
     <form action="proses_simpan.php" method="POST" enctype="multipart/form-data">
         <div class="form-group">
-            <label>Image Product</label>
+            <label>Foto</label>
             <input type="file" name="gambar_produk" required>
         </div>
 
