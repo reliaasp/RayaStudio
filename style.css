@@ -392,3 +392,180 @@ h1 {
     background: purple;
     color: white;
 }
+/* --- CSS UNTUK TAMPILAN BARU (FIGMA THEME) --- */
+
+/* Reset Dasar biar rapi */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f3f7f7; /* Abu-abu sangat muda sesuai referensi Lynk */
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR UNGU (Sesuai Figma) */
+.sidebar {
+    width: 260px;
+    background-color: #521475; /* Ungu gelap Figma */
+    color: white;
+    padding: 30px 20px;
+}
+
+.logo img {
+    width: 140px;
+    margin-bottom: 50px;
+}
+
+.menu-label {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu ul li {
+    margin-bottom: 20px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+/* Garis bawah di menu Home sesuai gambar Figma */
+.menu ul li.active a {
+    border-bottom: 2px solid white;
+    padding-bottom: 4px;
+}
+
+/* MAIN CONTENT (Area Kanan) */
+.main-content {
+    flex: 1;
+    padding: 40px 60px;
+}
+
+.main-content h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* CARD PUTIH (Gaya Lynk.id) */
+.content-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Shadow halus biar modern */
+    max-width: 850px;
+    border: 1px solid #eaeaea;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.label-account {
+    color: #888;
+    font-size: 14px;
+}
+
+.btn-upgrade {
+    border: 1.5px solid #521475;
+    background: transparent;
+    color: #521475;
+    padding: 6px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* BANNER PROFIL UNGU */
+.profile-banner {
+    background: linear-gradient(90deg, #83529b, #521475); /* Gradient ungu */
+    border-radius: 60px;
+    padding: 12px 30px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-bottom: 35px;
+}
+
+.avatar-circle {
+    width: 55px;
+    height: 55px;
+    background: #e0e0e0;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 2px solid white;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h3 {
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+.profile-info p {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.btn-share {
+    background: #fff0f5; /* Pink sangat muda */
+    color: #521475;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* TOMBOL AKSES CEPAT (Bagian Bawah) */
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+    overflow-x: auto; /* Biar bisa scroll kalau layar kecil */
+}
+
+.action-buttons button {
+    background: #ebebeb;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.action-buttons button:hover {
+    background: #e0e0e0;
+}
