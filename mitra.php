@@ -17,6 +17,11 @@
                 <p class="menu-label">MENU</p>
                 <ul>
                     <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">My Profile</a></li>
+                </ul>
+            </nav>
+            <nav class="menu-bottom">
+                <ul>
                     <li><a href="#">Log out</a></li>
                 </ul>
             </nav>
@@ -37,7 +42,7 @@
                     <div class="avatar-circle"></div>
                     <div class="profile-info">
                         <h3>Andre</h3>
-                        <p>https://lynk.id/arkcery</p>
+                        <p>https://lynk.id/andre</p>
                     </div>
                     <button class="btn-share">Share</button>
                 </div>
