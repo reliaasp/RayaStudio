@@ -49,7 +49,9 @@
 
                 <div class="action-buttons">
                     <button>Add Link</button>
-                    <button>Digital Product</button>
+                    <a href="add_digital.php" style="text-decoration: none;">
+    <button type="button">Digital Product</button>
+</a>
                     <button>Course</button>
                     <button>Set Up</button>
                     <button>Media</button>
