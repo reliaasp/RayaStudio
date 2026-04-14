@@ -13,7 +13,7 @@
 
     <div class="buttons">
         <a href="login.php" class="btn">SIGN IN</a>
-        <a href="signup.php" class="btn">SIGN UP</a>
+        <a href="choose_role.php" class="btn">SIGN UP</a>
     </div>
 
 </div>
