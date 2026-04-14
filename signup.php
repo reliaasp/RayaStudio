@@ -1,3 +1,7 @@
+<?php
+$role = $_GET['role'] ?? '';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,16 +26,11 @@
         <h2>Welcome to Raya Studio</h2>
 
         <form action="proses_signup.php" method="POST">
-
+            <input type="hidden" name="role" value="<?= $role ?>">
             <input type="text" name="username" placeholder="Username" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
             <input type="password" name="confirm" placeholder="Confirm Password" required>
-
-            <select name="role">
-                <option value="customer">Customer</option>
-                <option value="mitra">Mitra</option>
-            </select>
 
             <button type="submit">Sign Up</button>
 
