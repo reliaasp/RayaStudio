@@ -5,3 +5,5 @@ if (!$conn) {
     die("koneksi gagal 😭");
 }
 ?>
+
+//ini merupakan comment
