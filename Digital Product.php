@@ -60,16 +60,16 @@
 
         <div style="display: flex; gap: 10px;">
             <div class="form-group" style="flex: 2;">
+        <div class="form-group">
+    <label>Product Link / URL</label>
+    <input type="url" name="link_produk" placeholder="https://drive.google.com/..." required>
+    <small style="color: #888; font-size: 11px;">*Masukkan link download atau link platform (G-Drive/Dropbox)</small>
+</div>
                 <label>Price (IDR)</label>
                 <input type="number" name="harga" value="0">
             </div>
             <div class="form-group" style="flex: 1;">
                 <label>Platform</label>
-                <div class="form-group">
-    <label>Product Link / URL</label>
-    <input type="url" name="link_produk" placeholder="https://drive.google.com/..." required>
-    <small style="color: #888; font-size: 11px;">*Masukkan link download atau link platform (G-Drive)</small>
-</div>
                 <select name="platform">
                     <option value="G-Drive">G-Drive</option>
                 </select>
