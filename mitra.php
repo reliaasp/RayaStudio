@@ -52,7 +52,9 @@
                     <a href="add_digital.php" style="text-decoration: none;">
     <button type="button">Digital Product</button>
 </a>
-                    <button>Course</button>
+                    <a href="add_course.php" style="text-decoration: none;">
+    <button type="button">Course Video</button>
+</a>
                     <button>Set to Up</button>
                     <button>Media</button>
                 </div>
