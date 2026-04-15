@@ -53,7 +53,7 @@
     <button type="button">Digital Product</button>
 </a>
                     <button>Course</button>
-                    <button>Set Up</button>
+                    <button>Set to Up</button>
                     <button>Media</button>
                 </div>
             </section>
