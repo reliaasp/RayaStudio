@@ -44,7 +44,7 @@ $role = $_GET['role'] ?? '';
 <?php if (isset($_GET['success'])) { ?>
 <div class="popup">
     <div class="popup-box">
-        <h2>🎉 Sign Up Successful!</h2>
+        <h2>Sign Up Successful!</h2>
         <p>Your account has been created</p>
         <a href="login.php" class="popup-btn">Go to Login</a>
     </div>
