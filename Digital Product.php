@@ -65,10 +65,13 @@
             </div>
             <div class="form-group" style="flex: 1;">
                 <label>Platform</label>
+                <div class="form-group">
+    <label>Product Link / URL</label>
+    <input type="url" name="link_produk" placeholder="https://drive.google.com/..." required>
+    <small style="color: #888; font-size: 11px;">*Masukkan link download atau link platform (G-Drive)</small>
+</div>
                 <select name="platform">
                     <option value="G-Drive">G-Drive</option>
-                    <option value="Dropbox">Dropbox</option>
-                    <option value="Lainnya">Lainnya</option>
                 </select>
             </div>
         </div>
