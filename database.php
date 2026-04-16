@@ -5,11 +5,3 @@ if (!$conn) {
     die("koneksi gagal 😭");
 }
 ?>
-
-//ini merupakan comment
-//ini juga comment
-//ini koment lagi bos
-//lagi lagi comen
-//ini komen lagi ya 
-//ini komen lagi 
-//ada komen lagi ctrl s 
