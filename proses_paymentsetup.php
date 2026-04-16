@@ -10,19 +10,22 @@ $paket  = $_POST['paket'];
 $nama   = $_POST['nama'];
 $metode = $_POST['metode'];
 
-// Set harga berdasarkan paket (biar aman)
-if ($paket == "VIP") {
-    $harga = 100000;
-} elseif ($paket == "VVIP") {
-    $harga = 200000;
-} elseif ($paket == "VVIP+") {
-    $harga = 300000;
-} else {
+// Set harga berdasarkan paket
+$paket_list = [
+    "VIP" => 100000,
+    "VVIP" => 200000,
+    "VVIP+" => 300000
+];
+
+// Validasi paket
+if (!isset($paket_list[$paket])) {
     echo "Paket tidak valid!";
     exit;
 }
 
-// Simpan ke database (tanpa product_id)
+$harga = $paket_list[$paket];
+
+// Simpan ke database
 mysqli_query($conn, "INSERT INTO orders (user_id, paket, harga, nama, metode, status)
 VALUES ('$user_id', '$paket', '$harga', '$nama', '$metode', 'paid')");
 

@@ -1,126 +1,102 @@
-<?php
-session_start();
-
-// Ambil paket dari URL
-$paket = $_GET['paket'] ?? '';
-
-// Data paket (manual, tidak dari database)
-$data_paket = [
-    "VIP" => [
-        "harga" => 100000,
-        "deskripsi" => "Paket basic untuk pemula. Cocok untuk setup streaming sederhana dengan kebutuhan standar."
-    ],
-    "VVIP" => [
-        "harga" => 200000,
-        "deskripsi" => "Paket menengah dengan fitur lebih lengkap. Cocok untuk streamer yang ingin tampil lebih profesional."
-    ],
-    "VVIP+" => [
-        "harga" => 300000,
-        "deskripsi" => "Paket premium full setup + support. Cocok untuk content creator serius dengan kebutuhan maksimal."
-    ]
-];
-
-// Cek apakah paket valid
-if (!isset($data_paket[$paket])) {
-    echo "Paket tidak ditemukan!";
-    exit;
-}
-
-$harga = $data_paket[$paket]['harga'];
-$deskripsi = $data_paket[$paket]['deskripsi'];
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Payment - Setup Package</title>
+    <title>Setup Package - Raya</title>
     <link rel="stylesheet" href="style.css?v=20">
     <style>
-        .payment-container {
+        body {
+            background: #f5f5f5;
+            padding: 40px;
+            font-family: Arial;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #7b2cbf;
+        }
+
+        .card-wrapper {
             display: flex;
             gap: 20px;
-            padding: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
-        .payment-left {
-            flex: 1;
+        .card {
             background: linear-gradient(135deg, #7b2cbf, #c77dff);
             color: white;
-            padding: 30px;
+            padding: 25px;
             border-radius: 20px;
-        }
-
-        .payment-right {
-            flex: 1;
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
+            width: 260px;
+            text-align: center;
         }
 
         .price {
-            font-size: 20px;
+            font-size: 18px;
+            margin: 10px 0;
             font-weight: bold;
-            margin-top: 10px;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0 15px;
-            border-radius: 10px;
-            border: 1px solid #ddd;
         }
 
         button {
-            width: 100%;
-            padding: 12px;
+            margin-top: 15px;
+            padding: 10px 20px;
             border: none;
-            background: #7b2cbf;
-            color: white;
             border-radius: 20px;
+            background: white;
+            color: #7b2cbf;
             cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #eee;
         }
     </style>
 </head>
 <body>
 
-<div class="payment-container">
+<div class="container">
+    <h2>Pilih Setup Package</h2>
 
-    <!-- LEFT -->
-    <div class="payment-left">
-        <h2><?= $paket; ?></h2>
+    <div class="card-wrapper">
 
-        <p><?= $deskripsi; ?></p>
+        <!-- VIP -->
+        <div class="card">
+            <h3>VIP</h3>
+            <p>Paket basic untuk pemula</p>
+            <div class="price">Rp 100.000</div>
+            <button onclick="window.location.href='payment_setup.php?paket=VIP'">
+                Pilih VIP
+            </button>
+        </div>
 
-        <p class="price">Rp <?= number_format($harga,0,',','.'); ?></p>
+        <!-- VVIP -->
+        <div class="card">
+            <h3>VVIP</h3>
+            <p>Fitur lebih lengkap & profesional</p>
+            <div class="price">Rp 200.000</div>
+            <button onclick="window.location.href='payment_setup.php?paket=VVIP'">
+                Pilih VVIP
+            </button>
+        </div>
+
+        <!-- VVIP+ -->
+        <div class="card">
+            <h3>VVIP+</h3>
+            <p>Paket premium full support</p>
+            <div class="price">Rp 300.000</div>
+            <button onclick="window.location.href='payment_setup.php?paket=VVIP+'">
+                Pilih VVIP+
+            </button>
+        </div>
+
     </div>
-
-    <!-- RIGHT -->
-    <div class="payment-right">
-        <h2>Payment</h2>
-
-        <form action="proses_payment.php" method="POST">
-
-            <input type="hidden" name="paket" value="<?= $paket; ?>">
-            <input type="hidden" name="harga" value="<?= $harga; ?>">
-
-            <label>Nama</label>
-            <input type="text" name="nama" required>
-
-            <label>Paket</label>
-            <input type="text" value="<?= $paket; ?>" readonly>
-
-            <label>Metode Pembayaran</label>
-            <select name="metode">
-                <option value="qris">QRIS</option>
-                <option value="transfer">Transfer Bank</option>
-            </select>
-
-            <button type="submit">Bayar Sekarang</button>
-
-        </form>
-    </div>
-
 </div>
 
 </body>
