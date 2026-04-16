@@ -30,14 +30,6 @@ $user_id = $_SESSION['user_id'];
     <div class="profile">👤</div>
 </div>
 
-<!-- HERO -->
-<div class="detail-img">
-    <?php if (!empty($product['image'])): ?>
-        <img src="assets/uploads/<?php echo htmlspecialchars($product['image']); ?>" alt="Product" style="width: 300px; border-radius: 15px; object-fit: cover;">
-    <?php else: ?>
-        <img src="assets/lucu.jpg" alt="Default" style="width: 300px; border-radius: 15px; object-fit: cover;">
-    <?php endif; ?>
-</div>
 
 <!-- STATS -->
 <div class="stats">

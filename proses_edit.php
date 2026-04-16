@@ -8,9 +8,9 @@ $description = $_POST['description'];
 $category = $_POST['category'];
 
 // Jika ada upload gambar baru
-if (!empty($_FILES['gambar']['name'])) {
-    $nama_file = $_FILES['gambar']['name'];
-    $tmp_file = $_FILES['gambar']['tmp_name'];
+if (!empty($_FILES['image']['name'])) {
+    $nama_file = $_FILES['image']['name'];
+    $tmp_file = $_FILES['image']['tmp_name'];
     $path = "assets/uploads/" . $nama_file;
     
     move_uploaded_file($tmp_file, $path);

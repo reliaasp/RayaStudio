@@ -410,36 +410,38 @@ $query_products = mysqli_query($conn, "SELECT * FROM products ORDER BY id DESC")
                     <h3 class="my-products-title">My Links & Products</h3>
 
     <?php while($row = mysqli_fetch_assoc($query_products)) { ?>
-    <div class="product-list-card">
-        <?php if (!empty($row['gambar'])): ?>
-        <img src="assets/uploads/<?= $row['gambar'] ?>" alt="Product Image" class="plc-image">
-    <?php else: ?>
-        <img src="assets/lucu.jpg" alt="Default Image" class="plc-image">
-    <?php endif; ?>
-        <div class="plc-info">
-            <div class="plc-title"><?= htmlspecialchars($row['name']) ?></div>
-            <div>
-                <span class="plc-category"><?= ucfirst($row['category']) ?></span>
-                <span class="plc-price">Rp <?= number_format($row['price'], 0, ',', '.') ?></span>
-            </div>
+<div class="product-list-card" style="display: flex; align-items: center; gap: 15px;">
+    
+    <div class="plc-image">
+        <?php if (!empty($row['image'])): ?>
+            <img src="assets/uploads/<?= htmlspecialchars($row['image']) ?>" 
+                 style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px;">
+        <?php else: ?>
+            <img src="assets/lucu.jpg" 
+                 style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px;">
+        <?php endif; ?>
+    </div>
+
+    <div class="plc-info" style="flex: 1;">
+        <div class="plc-title" style="font-weight: bold;"><?= htmlspecialchars($row['name']) ?></div>
+        <div>
+            <span class="plc-category" style="font-size: 12px; color: #666;"><?= ucfirst($row['category']) ?></span>
+            <span class="plc-price" style="font-size: 14px; color: #4f1d70; font-weight: bold; margin-left: 10px;">
+                Rp <?= number_format($row['price'], 0, ',', '.') ?>
+            </span>
         </div>
-        
-        <div class="plc-actions">
-            <button class="plc-btn-edit" 
-        onclick="openEditModal(
-            '<?= $row['id'] ?>', 
-            '<?= htmlspecialchars($row['name']) ?>', 
-            '<?= $row['price'] ?>', 
-            '<?= htmlspecialchars($row['description']) ?>',
-            '<?= $row['category'] ?>'
-        )">
+    </div>
+    
+    <div class="plc-actions">
+        <button class="plc-btn-edit" 
+        onclick="openEditModal('<?= $row['id'] ?>', '<?= addslashes($row['name']) ?>', '<?= $row['price'] ?>', '<?= addslashes($row['description']) ?>', '<?= $row['category'] ?>')">
     Edit
 </button>
-            <a href="proses_delete.php?id=<?= $row['id'] ?>" class="plc-btn-delete" style="text-decoration:none;" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')">Delete</a>
-        </div>
-        
+        <a href="proses_delete.php?id=<?= $row['id'] ?>" class="plc-btn-delete" onclick="return confirm('Hapus produk ini?')">Delete</a>
     </div>
-    <?php } ?>
+</div>
+<?php } ?>
+    </div>
     </div>
                 </div>
             </div>
