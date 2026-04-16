@@ -76,9 +76,15 @@ $user_id = $_SESSION['user_id'];
 
     <div class="product-list">
 
-        <?php while ($row = mysqli_fetch_assoc($data)) { ?>
+       <?php while ($row = mysqli_fetch_assoc($data)) { ?>
             <div class="card">
-                <div class="card-icon"><?= $row['icon']; ?></div>
+                
+                <?php if (!empty($row['gambar'])): ?>
+                    <img src="assets/uploads/<?= htmlspecialchars($row['image']) ?>" alt="Product" style="width: 100%; height: 160px; object-fit: cover; border-radius: 12px; margin-bottom: 15px;">
+                <?php else: ?>
+                    <img src="assets/lucu.jpg" alt="Default" style="width: 100%; height: 160px; object-fit: cover; border-radius: 12px; margin-bottom: 15px;">
+                <?php endif; ?>
+
                 <h3><?= $row['name']; ?></h3>
                 <p>Kategori: <?= $row['category']; ?></p>
                 <p>Rp <?= $row['price']; ?></p>

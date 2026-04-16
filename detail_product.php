@@ -30,7 +30,11 @@ if (!$product) {
     <div class="detail-card">
 
         <div class="detail-img">
-            <?= $product['icon']; ?>
+            <?php if (!empty($product['image'])): ?>
+                <img src="assets/uploads/<?= htmlspecialchars($product['gambar']) ?>" alt="Product" style="width: 300px; border-radius: 15px; object-fit: cover;">
+            <?php else: ?>
+                <img src="assets/lucu.jpg" alt="Default" style="width: 300px; border-radius: 15px; object-fit: cover;">
+            <?php endif; ?>
         </div>
 
         <div class="detail-info">
