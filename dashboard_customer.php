@@ -31,16 +31,12 @@ $user_id = $_SESSION['user_id'];
 </div>
 
 <!-- HERO -->
-<div class="hero">
-    <div class="hero-text">
-        <h1>Set Your Digital Needs With Us</h1>
-        <p>Find the best digital solution for your streaming</p>
-        <a href="#products" class="hero-btn">Explore Now</a>
-    </div>
-
-    <div class="hero-img">
-        <img src="assets/hero.png">
-    </div>
+<div class="detail-img">
+    <?php if (!empty($product['image'])): ?>
+        <img src="assets/uploads/<?php echo htmlspecialchars($product['image']); ?>" alt="Product" style="width: 300px; border-radius: 15px; object-fit: cover;">
+    <?php else: ?>
+        <img src="assets/lucu.jpg" alt="Default" style="width: 300px; border-radius: 15px; object-fit: cover;">
+    <?php endif; ?>
 </div>
 
 <!-- STATS -->
@@ -99,7 +95,7 @@ $data = mysqli_query($conn, $sql);
        <?php while ($row = mysqli_fetch_assoc($data)) { ?>
             <div class="card">
                 
-                <?php if (!empty($row['gambar'])): ?>
+                <?php if (!empty($row['image'])): ?>
                     <img src="assets/uploads/<?= htmlspecialchars($row['image']) ?>" alt="Product" style="width: 100%; height: 160px; object-fit: cover; border-radius: 12px; margin-bottom: 15px;">
                 <?php else: ?>
                     <img src="assets/lucu.jpg" alt="Default" style="width: 100%; height: 160px; object-fit: cover; border-radius: 12px; margin-bottom: 15px;">
