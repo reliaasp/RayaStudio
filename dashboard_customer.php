@@ -25,6 +25,7 @@ $user_id = $_SESSION['user_id'];
         <a href="#" onclick="goCategory('digital')">Digital Product</a>
         <a href="#" onclick="goCategory('course')">Course</a>
         <a href="#" onclick="goCategory('setup')">Setup</a>
+        <a href="login.php" style="color: #ff4d4d; font-weight: bold;">Logout</a>
     </div>
     <div class="profile">👤</div>
 </div>
@@ -53,18 +54,37 @@ $user_id = $_SESSION['user_id'];
 <!-- PRODUCTS -->
 <div class="products" id="products">
     <h2>Our Product</h2>
+    <div style="margin-bottom: 30px; display: flex; justify-content: center;">
+    <form action="dashboard_customer.php#products" method="GET" style="width: 100%; max-width: 500px; display: flex; gap: 10px;">
+        <input type="text" name="search" placeholder="Cari overlay, course, atau teknisi..." 
+               value="<?= $_GET['search'] ?? '' ?>"
+               style="flex: 1; padding: 12px 20px; border-radius: 30px; border: 2px solid #9d4edd; outline: none;">
+        <button type="submit" style="padding: 10px 25px; background: #9d4edd; color: white; border: none; border-radius: 30px; cursor: pointer; font-weight: bold;">
+            Cari
+        </button>
+    </form>
+</div>
 
-    <?php
-    include "database.php";
+    <<?php
+include "database.php";
 
-    $category = $_GET['category'] ?? '';
+$category = $_GET['category'] ?? '';
+$search = $_GET['search'] ?? '';
 
-    if ($category) {
-        $data = mysqli_query($conn, "SELECT * FROM products WHERE category='$category'");
-    } else {
-        $data = mysqli_query($conn, "SELECT * FROM products");
-    }
-    ?>
+// Logika Query Gabungan Search & Filter
+$sql = "SELECT * FROM products WHERE 1=1";
+
+if ($category) {
+    $sql .= " AND category='$category'";
+}
+
+if ($search) {
+    $sql .= " AND (name LIKE '%$search%' OR description LIKE '%$search%')";
+}
+
+$sql .= " ORDER BY id DESC";
+$data = mysqli_query($conn, $sql);
+?>
 
     <!-- FILTER -->
     <div class="filter">
