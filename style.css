@@ -556,6 +556,160 @@ h1 {
 /* --- CSS UNTUK TAMPILAN BARU (FIGMA THEME) --- */
 /* ini buatan andre */
 /* Reset Dasar biar rapi */
+/* =========================================
+   STYLE KHUSUS DASHBOARD MITRA (TEMA UNGU)
+   ========================================= */
+
+.mitra-body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8; /* Background abu-abu terang mirip lynk.id */
+}
+
+.mitra-dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- SIDEBAR --- */
+.mitra-sidebar {
+    width: 250px;
+    background-color: #552b7b; /* Warna ungu dari desainmu */
+    color: white;
+    padding: 30px 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.mitra-logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.mitra-menu-title {
+    font-size: 14px;
+    color: #cca8f0;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.mitra-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mitra-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.mitra-nav a:hover, .mitra-nav a.active {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* --- MAIN CONTENT --- */
+.mitra-main {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.mitra-header h1 {
+    margin-top: 0;
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* --- CARDS & FORMS --- */
+.mitra-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    margin-bottom: 25px;
+}
+
+.mitra-account-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #8b5db5; /* Ungu lebih terang untuk card profile */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+}
+
+.mitra-avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+}
+
+/* Form Styles untuk Tambah Produk */
+.mitra-form-group {
+    margin-bottom: 20px;
+}
+
+.mitra-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+.mitra-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.mitra-input:focus {
+    outline: none;
+    border-color: #552b7b;
+}
+
+.mitra-btn {
+    background-color: #38bdf8; /* Warna tosca/biru mirip tombol lynk.id */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    float: right;
+}
+
+.mitra-btn:hover {
+    background-color: #0284c7;
+}
+
+/* --- RESPONSIVE UNTUK ETS --- */
+@media (max-width: 768px) {
+    .mitra-dashboard {
+        flex-direction: column;
+    }
+    .mitra-sidebar {
+        width: 100%;
+        padding: 20px;
+    }
+    .mitra-main {
+        padding: 20px;
+    }
+}
+/* ini catatan andre untuk mitra */
 * {
     margin: 0;
     padding: 0;

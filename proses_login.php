@@ -16,7 +16,7 @@ if ($user && $password == $user['password']) {
     if ($user['role'] == 'customer') {
         header("Location: dashboard_customer.php");
     } else {
-        header("Location: dashboard_mitra.php");
+        header("Location: mitra.php");
     }
     exit();
 
