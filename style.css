@@ -308,10 +308,10 @@ html {
 }
 
 .product-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    display: grid;
+    /* UBAH ANGKA 3 MENJADI 4 DI BAWAH INI */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; /* Jarak antar kotak, sesuaikan selera */
 }
 
 .card {
